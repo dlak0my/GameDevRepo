@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: -2
+  DespawnPoint: -4
+  SpawnPoint: 4
+  MinY: -1.34
+  MaxY: 1.46
 --- !u!1001 &8675688376111041358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3363427195253035129, guid: f1c50fd87289cf7428e2214363d4a47b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 3363427195253035129, guid: f1c50fd87289cf7428e2214363d4a47b, type: 3}
       propertyPath: m_LocalPosition.z

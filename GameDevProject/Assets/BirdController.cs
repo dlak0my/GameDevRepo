@@ -9,6 +9,9 @@ public class BirdController : MonoBehaviour
     public Rigidbody2D rb2D;
     public float JumpForce;
 
+    public static bool HasStarted;
+    public static bool GameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +21,23 @@ public class BirdController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameOver)
+            return;
+
         if (Input.GetButtonDown("Jump"))
         {
+            if (!HasStarted)
+            {
+                HasStarted = true;
+                rb2D.gravityScale = 1;
+            }
+
             rb2D.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
 
-        Debug.Log("Hello World per Update!");
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameOver = true;
     }
 }
